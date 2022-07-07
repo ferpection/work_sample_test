@@ -13,41 +13,22 @@ Given the following two sample files: ``items.csv`` and ``groups.csv`` where rec
 
 The resulting JSON It should have the following structure where UPPERCASE refers to the header line in the csv.
 
-```json
+```python
 {
-
    “UUID_title”:{
-
       "string”:”TITLE”
-
    },
 
    “UUID_description”:{
-
       "string”:”DESCRIPTION”,
-
       "context”:”GROUP”
-
    }
  }
  ```
 
 Example:
 
-Given the following item
-```csv
-|f19c962e-eec0-455f-baa9-c0ba6986d01b|,|autem deserunt quo quaerat deleniti|,|aut soluta repudiandae numquam accusantium pariatur culpa fugiat ducimus laudantium consequatur quam rerum dolorem beatae cum eius magni in architecto nihil similique odit été distinctio eligendi alias optio asperiores incidunt unde quaerat dolor a animi sapiente vel saepe ad iusto doloribus libero voluptates voluptate explicabo velit officiis praesentium accusamus possimus|,|cbfd812d-7b13-4b1c-8193-82a521ce6fb6|
-```
-
-and group
-
-```csv
-|cbfd812d-7b13-4b1c-8193-82a521ce6fb6|,|nesciunt quidem iure|
-```
-
-the generated json record would be
-
-```json
+```python
 {
    “f19c962e-eec0-455f-baa9-c0ba6986d01b_title”:{
       "string”: ”autem deserunt quo quaerat deleniti”
@@ -58,7 +39,6 @@ the generated json record would be
    }
  }
 ```
-
 
 When run as a CLI command it must accept a filename that may be either csv or json and transform from one format to the other.
 
