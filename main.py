@@ -31,7 +31,6 @@ class Converter:
             }
 
             joined_data.append(item_dict)
-        print(joined_data)
         return joined_data
 
     def write_to_output(self, joined_data, output_file):
