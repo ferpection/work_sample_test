@@ -4,7 +4,6 @@ import argparse
 
 import util
 
-
 argparser = argparse.ArgumentParser(
     description="""CSV to Structured JSON Parser:
                     Program that converts csv files of a specific format to a Structured JSON format""")
@@ -15,8 +14,8 @@ argparser.add_argument(
                         type=argparse.FileType('r', encoding='UTF-8'))
 argparser.add_argument(
     "groups_file", help="""Path to CSV file that contains the groups in the format:
-                            |uuid|,|group| 
-                            |<uuid>|,|<group_text>|...""", type=argparse.FileType('r', encoding='UTF-8'))
+                        |uuid|,|group| 
+                        |<uuid>|,|<group_text>|...""", type=argparse.FileType('r', encoding='UTF-8'))
 argparser.add_argument(
     "-o", help="""Path to output file,
                     if you don't specify a value then the output would be written to 
@@ -41,3 +40,5 @@ if util.is_valid_frame(groups, {'|uuid|','|group|'}) is False:
 structured_items = util.convert(items, groups)
 
 util.write_json(structured_items, args.o)
+
+print("Conversion seems to have happened successfully and result is saved at : "+str(args.o.name))

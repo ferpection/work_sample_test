@@ -4,7 +4,6 @@ import json
 def is_valid_frame(dataFrame, expected_columns):
     return dataFrame.empty is False and expected_columns.issubset(dataFrame.columns)
         
-
 def read_csv(file_path):
     return pd.read_csv(file_path, sep=',')
 
@@ -15,7 +14,6 @@ def write_json(data, output_file):
     json.dump(data, output_file, ensure_ascii=False, indent=4, default=str)
 
 def convert(items, groups):
-
     # prevent weird 'auto-names' that pandas uses to resolve name clashes when we join the two datasets
     groups.rename({'|uuid|': 'group_uuid'}, axis='columns', inplace=True)
 
