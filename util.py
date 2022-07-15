@@ -18,9 +18,9 @@ def convert(items, groups):
     groups.rename({'|uuid|': 'group_uuid'}, axis='columns', inplace=True)
 
     # get the two related datasets into one like a regular SQL join for RDBMSes
-    full_set = pd.merge(items, groups, how='inner',
+    full_set = pd.merge(items, groups, how='left',
                         left_on='|group_id|', right_on='group_uuid')
-
+    full_set.fillna('Unknown Context', inplace=True)
     structured_items = {}
 
     for row in zip(full_set['|uuid|'],
