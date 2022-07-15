@@ -40,7 +40,7 @@ Example:
  }
 ```
 
-When run as a CLI command it must accept a filename that may be either csv or json and transform from one format to the other.
+When run as a CLI command it must accept a filename in csv format and transform it to JSON.
 
 It will be run similar to the following example:
 
